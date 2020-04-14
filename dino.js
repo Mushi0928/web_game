@@ -8,6 +8,8 @@ canvas.setAttribute("tabindex", 0);
 var spacePressed = false;
 const G = 0.1;
 const heightLimit = 150;
+
+//gameObjects
 class SceneObj{
     constructor(x,y,width,height,color){
         this.x = x;
@@ -67,6 +69,7 @@ class Player{
     }
 
 }
+//keyHandlers
 function keyDownHandler(e){
     if(e.key == ' '){
         spacePressed = true;
@@ -78,6 +81,7 @@ function keyUpHandler(e){
         spacePressed = false;
     }
 } 
+//main functions
 function init(){
     ground = new SceneObj(0,300,canvas.width,canvas.height-200,'gray');
     player = new Player(80,80,'red');
@@ -93,5 +97,6 @@ function update(){
     
 
 }
+//execute
 init();
 setInterval(update,1000/60);
