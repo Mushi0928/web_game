@@ -149,10 +149,10 @@ class obstacle{
     update(){
         if(rectCollision(player.x,player.y,player.width,player.height,
                          this.x,this.y,this.width,this.height)){
-                         console.log("collided");
+                         //console.log("collided");
                          isPlaying = false;    
                          }else{
-                             console.log("not collided");
+                             //console.log("not collided");
                          }
         this.x -= this.velocity;
         if(this.x < 0 - this.width){
@@ -180,6 +180,14 @@ function keyUpHandler(e){
         spacePressed = false;
     }
 } 
+function buttonDownHandler(){
+    console.log("button down");
+    spacePressed = true;
+}
+function buttonUpHandler(){
+    console.log("button up");
+    spacePressed = false;
+}
 //main functions
 function init(){
     ground = new SceneObj(0,300,canvas.width,canvas.height-200,'gray');
